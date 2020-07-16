@@ -1,0 +1,122 @@
+@charset 'utf-8';
+
+$body-background-color: #F9F9F9;
+$navbar-background-color: $body-background-color;
+$green: #3DB56E;
+$primary: $green;
+$secondary: #512796;
+$link: $green;
+$family-primary: "Museo Sans", -apple-system, "Helvetica", "Arial", sans-serif;
+
+$text: #2B1C3B;
+
+$navbar-item-hover-background-color: transparent;
+
+@import 'node_modules/bulma/bulma.sass';
+
+.navbar {
+  border-bottom: 1px solid $grey-lighter;
+
+  .navbar-menu a.navbar-item {
+      &:hover {
+          border-bottom: 1px solid $link;
+          margin-bottom: -1px;
+      }
+  }
+}
+
+h1.title, h2.title {color: $text;}
+h2.title {font-size: 3rem; font-weight: 500;}
+
+section:nth-child(odd) {background: #fff}
+
+.hero {
+  .title {
+    font-size: 3.5em;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-size: 1.8em;
+    padding: 1em 0;
+    color: #5E5865;
+  }
+
+  img {
+    width: 320px;
+    margin-bottom: -8px;
+  }
+
+  .hero-body {
+    padding-bottom: 0;
+  }
+}
+
+.services {
+  .card {
+    /* make all cards same height */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .card-header {
+      box-shadow: none;
+
+      .card-header-title {
+        font-size: 1.34rem;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+        padding: 0 0 1.34rem 0;
+        color: $text;
+        border-bottom: 1px solid #f5f4f4;
+      }
+    }
+
+    $offset: 1.4rem;
+
+    .card-content {
+      flex: 1 0 auto;
+
+      ul {
+        padding-left: $offset;
+        line-height: 1.6rem;
+      }
+
+      ul > li {
+        text-indent: -$offset;
+        padding-bottom: .4rem;
+      }
+
+      ul > li:before {
+        content: "\2014\a0  ";
+      }
+    }
+
+    .card-footer {
+      padding: $offset;
+      flex-shrink: 0;
+      border-top: none;
+      flex-direction: column;
+
+      .condition {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $secondary;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f5f4f4;
+      }
+
+      .button {
+        margin-top: $offset;
+      }
+    }
+  }
+
+  .challenge {
+    .card-footer {
+      display: inline;
+    }
+  }
+}
+
+.reviews {
+}
