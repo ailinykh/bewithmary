@@ -119,4 +119,76 @@ section:nth-child(odd) {background: #fff}
 }
 
 .reviews {
+  .carousel {
+    overflow: visible;
+
+    .slider-wrapper.axis-horizontal {
+      overflow: hidden;
+
+      .slider .slide {
+        display: flex;
+        // overide default
+        flex-direction: row;
+        background: transparent;
+
+        .box {
+          margin: 1.4rem;
+
+          .media {
+            .image {
+              img {
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .control-arrow {
+      border: solid $secondary;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 10px;
+      opacity: 1;
+      top: 35%;
+      bottom: inherit;
+
+      &:before {content: none;}
+      &:hover {background: none;}
+
+      &.control-prev {
+        left: -1rem;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+
+      &.control-next {
+        right: -1rem;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+
+      &.control-disabled {
+        display: none;
+      }
+    }
+
+    .control-dots {
+      position: inherit;
+
+      .dot {
+        background-color: #eee;
+        box-shadow: none;
+        opacity: 1;
+        outline: none;
+        width: 10px;
+        height: 10px;
+
+        &.selected {
+          background-color: $green;
+        }
+      }
+    }
+  }
 }
