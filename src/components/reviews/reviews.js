@@ -44,11 +44,12 @@ const ReviewBox = ({imgSrc, title, subtitle, text}) => <div className="box">
     </div>
     <div className='media-content'>
       <div className='content'>
-        <div class="title">{title}</div>
-        <div class="subtitle">{subtitle}</div>
+        <div className="title">{title}</div>
+        <div className="subtitle">{subtitle}</div>
       </div>
     </div>
   </article>
+  <div className='text'>{text}</div>
 </div>
 
 export default () =>
