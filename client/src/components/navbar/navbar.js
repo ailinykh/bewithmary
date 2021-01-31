@@ -18,11 +18,12 @@ export default () =>
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-menu">
-          <a href="#about" className="navbar-item">Обо мне</a>
+          {/* <a href="#about" className="navbar-item">Обо мне</a>
           <a href="#projects" className="navbar-item">Проекты</a>
           <a href="#content" className="navbar-item">Материалы (бонус)*</a>
           <a href="#reviews" className="navbar-item">Отзывы</a>
-          <a href="#education" className="navbar-item">Сертификаты</a>
+          <a href="#education" className="navbar-item">Сертификаты</a> */}
+          <a href="#plans" className="navbar-item">Тарифы</a>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">

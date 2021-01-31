@@ -32,12 +32,12 @@ section:nth-child(odd) {background: #fff}
 
 .hero {
   .title {
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 500;
   }
 
   .subtitle {
-    font-size: 1.8em;
+    font-size: 1.6em;
     padding: 1em 0;
     color: #5E5865;
   }
@@ -49,6 +49,16 @@ section:nth-child(odd) {background: #fff}
 
   .hero-body {
     padding-bottom: 0;
+  }
+
+  .react-tel-input {
+    .form-control {
+      font-size: inherit;
+      letter-spacing: inherit;
+      line-height: inherit;
+      height: inherit;
+      width: inherit;
+    }
   }
 }
 
