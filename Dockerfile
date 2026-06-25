@@ -1,6 +1,7 @@
 # ponytail: single-stage build off standalone output; multi-stage if image size matters
 FROM node:22-alpine AS build
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
 COPY package*.json ./
 RUN npm ci
 COPY . .
