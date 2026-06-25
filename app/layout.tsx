@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   title: "Мария Ильиных — психотерапевт. КПТ и ACT",
   description:
     "Магистр психологии, КПТ- и ACT-терапевт. Помогаю справиться с перееданием, расстройствами пищевого поведения, тревогой, депрессией и зависимостями.",
+  manifest: "/site.webmanifest",
+  appleWebApp: { title: "Mary" },
 };
 
 export default function RootLayout({
