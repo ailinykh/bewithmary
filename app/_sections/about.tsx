@@ -1,8 +1,8 @@
-import { accordionSummary, h2, section, Toggle, wrap } from "../_ui";
-import { education } from "../_content/home";
+import { accordionSummary, h2, section, Toggle, wrap } from '../_ui';
+import { education } from '../_content/home';
 
 const detailsSummary =
-  "group/sum grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-6 border-y border-border py-4.5 transition-[border-color] duration-150 outline-none group-open/sec:border-b-transparent hover:border-border-strong [&::-webkit-details-marker]:hidden";
+  'group/sum grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-6 border-y border-border py-4.5 transition-[border-color] duration-150 outline-none group-open/sec:border-b-transparent hover:border-border-strong [&::-webkit-details-marker]:hidden';
 const detailsTitle = `${h2} max-w-[22ch] transition-colors duration-150 group-hover/sum:text-accent group-focus-visible/sum:text-accent`;
 
 export function AboutSection() {
@@ -84,7 +84,7 @@ export function AboutSection() {
               уважение, безопасность и возможность быть собой. Я не стремлюсь
               «исправлять» людей. Моя задача — помочь лучше понимать себя,
               научиться справляться со сложными ситуациями и развить навыки
-              самоподдержки, которые{" "}
+              самоподдержки, которые{' '}
               <strong>
                 останутся с вами после завершения терапии и не раз пригодятся в
                 жизни

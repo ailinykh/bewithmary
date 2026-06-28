@@ -1,5 +1,5 @@
-import { accordionSummary, section, sectionTitle, Toggle, wrap } from "../_ui";
-import { faq } from "../_content/home";
+import { accordionSummary, section, sectionTitle, Toggle, wrap } from '../_ui';
+import { faq } from '../_content/home';
 
 export function FaqSection() {
   return (

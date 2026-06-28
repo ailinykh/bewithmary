@@ -1,5 +1,5 @@
-import { section, sectionTitle, wrap } from "../_ui";
-import { process } from "../_content/home";
+import { section, sectionTitle, wrap } from '../_ui';
+import { process } from '../_content/home';
 
 export function ProcessSection() {
   return (

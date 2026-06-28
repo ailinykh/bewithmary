@@ -1,12 +1,12 @@
-import Image from "next/image";
-import cabinet from "@/public/assets/cabinet.jpg";
-import { wrap } from "../_ui";
-import { channels, type ContactChannel } from "../_content/home";
+import Image from 'next/image';
+import cabinet from '@/public/assets/cabinet.jpg';
+import { wrap } from '../_ui';
+import { channels, type ContactChannel } from '../_content/home';
 
 const channelBase =
-  "group flex items-center justify-between gap-3.5 border border-accent bg-transparent px-[18px] py-3.5 text-fg transition-[background,color,transform] duration-200 hover:bg-accent hover:text-surface hover:-translate-y-px";
+  'group flex items-center justify-between gap-3.5 border border-accent bg-transparent px-[18px] py-3.5 text-fg transition-[background,color,transform] duration-200 hover:bg-accent hover:text-surface hover:-translate-y-px';
 const channelName =
-  "font-display text-base font-medium tracking-snug text-fg group-hover:text-surface";
+  'font-display text-base font-medium tracking-snug text-fg group-hover:text-surface';
 
 function ChannelIcon({ src }: { src: string }) {
   return (
@@ -31,7 +31,7 @@ function ChannelLink({ channel }: { channel: ContactChannel }) {
       className={channelBase}
       aria-label={channel.ariaLabel}
     >
-      {channel.kind === "featured" ? (
+      {channel.kind === 'featured' ? (
         <span className="grid items-start gap-1">
           <span className="font-mono text-[10.5px] tracking-eyebrow text-muted uppercase group-hover:text-[color-mix(in_oklab,var(--color-surface)_70%,transparent)]">
             {channel.kicker}
@@ -98,7 +98,7 @@ export function BookSection() {
 
         <div className="reveal desk:col-[2/-1]">
           <p className="mt-8 max-w-[60ch] text-[13px] leading-[1.65] text-muted [&_a]:border-b [&_a]:border-[color-mix(in_oklab,var(--color-fg)_30%,transparent)] [&_a]:text-fg [&_a]:transition-[border-color] [&_a]:duration-150 [&_a:hover]:border-fg">
-            Записываясь на консультацию, вы подтверждаете ознакомление с{" "}
+            Записываясь на консультацию, вы подтверждаете ознакомление с{' '}
             <a href="#consent-doc">информированным согласием</a>.
           </p>
           <p className="mt-3.5 max-w-[60ch] text-[12px] leading-[1.65] text-muted">

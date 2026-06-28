@@ -1,6 +1,8 @@
 const config = {
-  plugins: ["prettier-plugin-tailwindcss"],
-  tailwindStylesheet: "./app/globals.css",
+  printWidth: 80,
+  plugins: ['prettier-plugin-tailwindcss'],
+  singleQuote: true,
+  tailwindStylesheet: './app/globals.css',
 };
 
 export default config;

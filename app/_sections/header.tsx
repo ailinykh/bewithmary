@@ -1,6 +1,6 @@
-import { accentBtn, wrap } from "../_ui";
-import { nav } from "../_content/home";
-import { MobileNav } from "../_components/mobile-nav";
+import { accentBtn, wrap } from '../_ui';
+import { nav } from '../_content/home';
+import { MobileNav } from '../_components/mobile-nav';
 
 export function Header() {
   return (

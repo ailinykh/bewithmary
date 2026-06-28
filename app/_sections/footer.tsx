@@ -1,4 +1,4 @@
-import { wrap } from "../_ui";
+import { wrap } from '../_ui';
 
 export function Footer() {
   return (

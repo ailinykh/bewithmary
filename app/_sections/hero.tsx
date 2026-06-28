@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import Image from "next/image";
-import portrait from "@/public/assets/portrait-hero.jpg";
-import { accentBtn, Arrow, wrap } from "../_ui";
+import type { ReactNode } from 'react';
+import Image from 'next/image';
+import portrait from '@/public/assets/portrait-hero.jpg';
+import { accentBtn, Arrow, wrap } from '../_ui';
 
 const heroFacts: { icon: ReactNode; label: ReactNode }[] = [
   {

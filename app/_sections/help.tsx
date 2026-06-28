@@ -1,5 +1,5 @@
-import { section, sectionTitle, wrap } from "../_ui";
-import { helpItems } from "../_content/home";
+import { section, sectionTitle, wrap } from '../_ui';
+import { helpItems } from '../_content/home';
 
 export function HelpSection() {
   return (
@@ -18,7 +18,7 @@ export function HelpSection() {
           ))}
         </ul>
         <p className="mt-7 max-w-[64ch] text-[15px] leading-[1.6] text-muted">
-          Если вы не нашли свой запрос в списке,{" "}
+          Если вы не нашли свой запрос в списке,{' '}
           <a href="#book" className="border-b border-fg pb-px text-fg">
             напишите мне
           </a>

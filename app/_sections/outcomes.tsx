@@ -1,5 +1,5 @@
-import { Check, section, sectionTitle, wrap } from "../_ui";
-import { outcomes } from "../_content/home";
+import { Check, section, sectionTitle, wrap } from '../_ui';
+import { outcomes } from '../_content/home';
 
 export function OutcomesSection() {
   return (

@@ -1,11 +1,11 @@
-import { Fragment } from "react";
-import { accentBtn, Arrow, Check, section, sectionTitle, wrap } from "../_ui";
-import { pricing, type PriceCard as PriceCardData } from "../_content/home";
+import { Fragment } from 'react';
+import { accentBtn, Arrow, Check, section, sectionTitle, wrap } from '../_ui';
+import { pricing, type PriceCard as PriceCardData } from '../_content/home';
 
 const cardHeading =
-  "font-display text-[clamp(20px,1.4vw+0.3rem,24px)] leading-[1.2] font-semibold tracking-[-0.012em] text-fg";
+  'font-display text-[clamp(20px,1.4vw+0.3rem,24px)] leading-[1.2] font-semibold tracking-[-0.012em] text-fg';
 const amount =
-  "mt-1 font-display text-[clamp(22px,1.8vw+0.3rem,30px)] leading-[1.2] font-semibold tracking-[-0.012em] text-fg";
+  'mt-1 font-display text-[clamp(22px,1.8vw+0.3rem,30px)] leading-[1.2] font-semibold tracking-[-0.012em] text-fg';
 
 function PriceCard({ card }: { card: PriceCardData }) {
   return (

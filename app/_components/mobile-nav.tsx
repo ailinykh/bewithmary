@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState, useSyncExternalStore } from "react";
-import { createPortal } from "react-dom";
-import { accentBtn } from "../_ui";
-import { nav } from "../_content/home";
+import { useState, useSyncExternalStore } from 'react';
+import { createPortal } from 'react-dom';
+import { accentBtn } from '../_ui';
+import { nav } from '../_content/home';
 
 // Returns false during SSR / first render, true once mounted on the client —
 // without a setState-in-effect. Lets us defer the body portal until there's a
@@ -27,7 +27,7 @@ export function MobileNav() {
 
   const sheet = (
     <div
-      className={open ? "mobile-menu is-open" : "mobile-menu"}
+      className={open ? 'mobile-menu is-open' : 'mobile-menu'}
       id="mobile-menu"
       aria-hidden={!open}
       inert={!open}
@@ -60,7 +60,7 @@ export function MobileNav() {
       <button
         className="menu-btn -mr-2.5 grid h-11 w-11 place-items-center desk:hidden"
         type="button"
-        aria-label={open ? "Закрыть меню" : "Открыть меню"}
+        aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((v) => !v)}

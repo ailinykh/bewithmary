@@ -1,4 +1,4 @@
-import SiteScripts from "./site-scripts";
+import SiteScripts from './site-scripts';
 import {
   AboutSection,
   ApproachSection,
@@ -12,7 +12,7 @@ import {
   OutcomesSection,
   PricingSection,
   ProcessSection,
-} from "./_sections";
+} from './_sections';
 
 export default function Home() {
   return (

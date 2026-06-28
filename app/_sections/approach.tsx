@@ -1,7 +1,7 @@
-import { Check, h2, section, wrap } from "../_ui";
-import { principles } from "../_content/home";
+import { Check, h2, section, wrap } from '../_ui';
+import { principles } from '../_content/home';
 
-const hexLabel = "fill-fg font-display text-[12px] font-medium tracking-snug";
+const hexLabel = 'fill-fg font-display text-[12px] font-medium tracking-snug';
 
 function HexaflexDiagram() {
   return (
@@ -114,10 +114,10 @@ export function ApproachSection() {
           <p>
             Я не даю оценок, не стыжу и не заставляю Вас следовать чужим
             правилам. Я поддерживаю Вас на пути к той жизни, которой вы хотите
-            жить. Вместе{" "}
+            жить. Вместе{' '}
             <strong className="font-semibold">
               мы развиваем навыки психологической гибкости
-            </strong>{" "}
+            </strong>{' '}
             и самоподдержки, которые помогают легче адаптироваться к трудностям
             и сохранять опору на свои ценности даже в непростые периоды жизни
           </p>
@@ -144,7 +144,7 @@ export function ApproachSection() {
         <p className="mt-[clamp(48px,7vw,80px)] max-w-[68ch] font-serif text-[clamp(22px,1.8vw+0.4rem,30px)] leading-[1.35] tracking-snug text-fg italic">
           Я убеждена, что основа устойчивых изменений — бережное и уважительное
           отношение к себе, понимание своих потребностей, ценностей и внутренних
-          процессов —{" "}
+          процессов —{' '}
           <strong className="font-semibold">
             к этому мы и будем стремиться!
           </strong>

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ─────────────────────────────────────────────────────────────
    Design tokens — from design/brand-spec.md.
@@ -17,12 +17,12 @@
   --color-accent-hover: oklch(36% 0.05 310);
 
   --font-display:
-    var(--font-manrope), -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    var(--font-manrope), -apple-system, BlinkMacSystemFont, 'SF Pro Display',
     system-ui, sans-serif;
   --font-body:
-    var(--font-inter), -apple-system, "SF Pro Text", system-ui, sans-serif;
+    var(--font-inter), -apple-system, 'SF Pro Text', system-ui, sans-serif;
   --font-serif: var(--font-cormorant), Georgia, serif;
-  --font-mono: ui-monospace, "IBM Plex Mono", SFMono-Regular, Menlo, monospace;
+  --font-mono: ui-monospace, 'IBM Plex Mono', SFMono-Regular, Menlo, monospace;
 
   --breakpoint-fold: 600px;
   --breakpoint-tab: 720px;
@@ -88,7 +88,7 @@
   }
   .menu-btn span::before,
   .menu-btn span::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     width: 22px;
@@ -102,13 +102,13 @@
   .menu-btn span::after {
     top: 7px;
   }
-  .menu-btn[aria-expanded="true"] span {
+  .menu-btn[aria-expanded='true'] span {
     background: transparent;
   }
-  .menu-btn[aria-expanded="true"] span::before {
+  .menu-btn[aria-expanded='true'] span::before {
     transform: translateY(7px) rotate(45deg);
   }
-  .menu-btn[aria-expanded="true"] span::after {
+  .menu-btn[aria-expanded='true'] span::after {
     transform: translateY(-7px) rotate(-45deg);
   }
 
