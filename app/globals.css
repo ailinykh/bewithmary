@@ -6,23 +6,26 @@
    font-display / fold: / desk: are generated. Fonts come from next/font.
    ────────────────────────────────────────────────────────── */
 @theme {
-  --color-bg:           oklch(97.5% 0.006 85);
-  --color-surface:      oklch(99.5% 0.003 85);
-  --color-fg:           oklch(20% 0.012 60);
-  --color-muted:        oklch(46% 0.010 60);
-  --color-border:       oklch(88% 0.008 80);
-  --color-border-strong: oklch(78% 0.010 70);
-  --color-accent:       oklch(43% 0.045 310);
-  --color-accent-soft:  oklch(94% 0.015 310);
+  --color-bg: oklch(97.5% 0.006 85);
+  --color-surface: oklch(99.5% 0.003 85);
+  --color-fg: oklch(20% 0.012 60);
+  --color-muted: oklch(46% 0.01 60);
+  --color-border: oklch(88% 0.008 80);
+  --color-border-strong: oklch(78% 0.01 70);
+  --color-accent: oklch(43% 0.045 310);
+  --color-accent-soft: oklch(94% 0.015 310);
   --color-accent-hover: oklch(36% 0.05 310);
 
-  --font-display: var(--font-manrope), -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-  --font-body:    var(--font-inter), -apple-system, 'SF Pro Text', system-ui, sans-serif;
-  --font-serif:   var(--font-cormorant), Georgia, serif;
-  --font-mono:    ui-monospace, 'IBM Plex Mono', SFMono-Regular, Menlo, monospace;
+  --font-display:
+    var(--font-manrope), -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    system-ui, sans-serif;
+  --font-body:
+    var(--font-inter), -apple-system, "SF Pro Text", system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-mono: ui-monospace, "IBM Plex Mono", SFMono-Regular, Menlo, monospace;
 
   --breakpoint-fold: 600px;
-  --breakpoint-tab:  720px;
+  --breakpoint-tab: 720px;
   --breakpoint-desk: 960px;
   --breakpoint-wide: 1280px;
 }
@@ -47,7 +50,10 @@
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
-  ::selection { background: var(--color-accent); color: var(--color-surface); }
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-surface);
+  }
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -57,66 +63,129 @@
    ────────────────────────────────────────────────────────── */
 @layer components {
   /* Sticky header border appears once scrolled (JS toggles .is-scrolled) */
-  .site-header.is-scrolled { border-bottom-color: var(--color-border); }
+  .site-header.is-scrolled {
+    border-bottom-color: var(--color-border);
+  }
 
   /* Active nav link underline (JS toggles .is-active) */
-  .nav-link.is-active { color: var(--color-fg); border-bottom-color: var(--color-fg); }
+  .nav-link.is-active {
+    color: var(--color-fg);
+    border-bottom-color: var(--color-fg);
+  }
 
   /* Hamburger → X */
   .menu-btn span {
-    display: block; width: 22px; height: 1.5px; background: var(--color-fg); position: relative;
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--color-fg);
+    position: relative;
   }
-  .menu-btn span::before, .menu-btn span::after {
-    content: ''; position: absolute; left: 0; width: 22px; height: 1.5px;
-    background: var(--color-fg); transition: transform .2s;
+  .menu-btn span::before,
+  .menu-btn span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 1.5px;
+    background: var(--color-fg);
+    transition: transform 0.2s;
   }
-  .menu-btn span::before { top: -7px; }
-  .menu-btn span::after  { top:  7px; }
-  .menu-btn[aria-expanded="true"] span { background: transparent; }
-  .menu-btn[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
-  .menu-btn[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+  .menu-btn span::before {
+    top: -7px;
+  }
+  .menu-btn span::after {
+    top: 7px;
+  }
+  .menu-btn[aria-expanded="true"] span {
+    background: transparent;
+  }
+  .menu-btn[aria-expanded="true"] span::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-btn[aria-expanded="true"] span::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 
   /* Mobile menu sheet (JS toggles .is-open) */
   .mobile-menu {
-    position: fixed; inset: 64px 0 auto 0;
+    position: fixed;
+    inset: 64px 0 auto 0;
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
     padding: 24px clamp(20px, 4vw, 48px) 32px;
     transform: translateY(-110%);
-    transition: transform .25s ease;
+    transition: transform 0.25s ease;
     z-index: 49;
   }
-  .mobile-menu.is-open { transform: translateY(0); }
+  .mobile-menu.is-open {
+    transform: translateY(0);
+  }
 
   /* Intro video poster + play overlay (JS toggles .is-playing) */
   .intro-play::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 55%, oklch(20% 0.012 60 / 0.2) 100%);
-    pointer-events: none; transition: background .25s ease;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 55%,
+      oklch(20% 0.012 60 / 0.2) 100%
+    );
+    pointer-events: none;
+    transition: background 0.25s ease;
   }
   .intro-play:hover::before {
-    background: linear-gradient(180deg, transparent 50%, oklch(20% 0.012 60 / 0.3) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      oklch(20% 0.012 60 / 0.3) 100%
+    );
   }
   .intro-play-icon {
     box-shadow: 0 14px 38px -10px oklch(20% 0.012 60 / 0.35);
-    transition: transform .3s cubic-bezier(.22,.6,.36,1), box-shadow .25s ease;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 0.6, 0.36, 1),
+      box-shadow 0.25s ease;
   }
   .intro-play:hover .intro-play-icon {
     transform: scale(1.06);
     box-shadow: 0 22px 52px -10px oklch(20% 0.012 60 / 0.45);
   }
-  .intro-play.is-playing { opacity: 0; pointer-events: none; }
+  .intro-play.is-playing {
+    opacity: 0;
+    pointer-events: none;
+  }
 
   /* Back-to-top FAB (JS toggles .is-visible) */
   .to-top-fab {
-    opacity: 0; pointer-events: none; transform: translateY(8px);
-    transition: background .25s ease, color .2s ease, opacity .3s ease, transform .3s ease;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition:
+      background 0.25s ease,
+      color 0.2s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
-  .to-top-fab.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .to-top-fab.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
 
   /* Scroll reveal (JS toggles .is-in) */
   @media (prefers-reduced-motion: no-preference) {
-    .reveal { opacity: 0; transform: translateY(8px); transition: opacity .8s ease, transform .8s ease; }
-    .reveal.is-in { opacity: 1; transform: none; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+    }
   }
 }

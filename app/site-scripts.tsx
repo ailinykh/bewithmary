@@ -18,7 +18,8 @@ export default function SiteScripts() {
       if (menu) menu.inert = !isOpen;
     };
     const closeMenu = () => setMenu(false);
-    const onMenuClick = () => setMenu(btn?.getAttribute("aria-expanded") !== "true");
+    const onMenuClick = () =>
+      setMenu(btn?.getAttribute("aria-expanded") !== "true");
     btn?.addEventListener("click", onMenuClick);
     const menuLinks = menu ? Array.from(menu.querySelectorAll("a")) : [];
     menuLinks.forEach((a) => a.addEventListener("click", closeMenu));
