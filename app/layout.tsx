@@ -22,12 +22,39 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const title = "Мария Ильиных — психотерапевт. КПТ и ACT";
+const description =
+  "Магистр психологии, КПТ- и ACT-терапевт. Помогаю справиться с перееданием, расстройствами пищевого поведения, тревогой, депрессией и зависимостями.";
+
+const ogImage = {
+  url: "/web-app-manifest-512x512.png",
+  width: 512,
+  height: 512,
+  alt: "Мария Ильиных",
+};
+
 export const metadata: Metadata = {
-  title: "Мария Ильиных — психотерапевт. КПТ и ACT",
-  description:
-    "Магистр психологии, КПТ- и ACT-терапевт. Помогаю справиться с перееданием, расстройствами пищевого поведения, тревогой, депрессией и зависимостями.",
+  metadataBase: new URL("https://bewithmary.com"),
+  title,
+  description,
   manifest: "/site.webmanifest",
   appleWebApp: { title: "Mary" },
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    siteName: title,
+    url: "/",
+    title,
+    description,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage.url],
+  },
 };
 
 export default function RootLayout({

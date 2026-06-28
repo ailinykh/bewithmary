@@ -1,0 +1,12 @@
+export { Header } from "./header";
+export { Hero } from "./hero";
+export { ApproachSection } from "./approach";
+export { HelpSection } from "./help";
+export { ProcessSection } from "./process";
+export { OutcomesSection } from "./outcomes";
+export { AboutSection } from "./about";
+export { PricingSection } from "./pricing";
+export { FaqSection } from "./faq";
+export { BookSection } from "./book";
+export { Footer } from "./footer";
+export { BackToTop } from "./back-to-top";

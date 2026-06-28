@@ -2,28 +2,12 @@
 
 import { useEffect } from "react";
 
-// ponytail: 1:1 port of the design's inline <script>, driven against the
-// server-rendered DOM. Static markup stays a server component; this only wires
-// up the imperative bits (native <details> accordions need no JS).
+// Wires up scroll-driven chrome against the server-rendered DOM by class/id.
+// These selectors must stay in sync with the markup: .site-header,
+// .nav a[href^="#"], .nav-link, .to-top-fab, .reveal. (The mobile menu is a
+// self-contained client island — see app/_components/mobile-nav.tsx.)
 export default function SiteScripts() {
   useEffect(() => {
-    /* Mobile menu */
-    const btn = document.querySelector<HTMLButtonElement>(".menu-btn");
-    const menu = document.getElementById("mobile-menu");
-    const setMenu = (isOpen: boolean) => {
-      btn?.setAttribute("aria-expanded", String(isOpen));
-      menu?.classList.toggle("is-open", isOpen);
-      menu?.setAttribute("aria-hidden", String(!isOpen));
-      // `inert` keeps the offscreen menu out of tab order + a11y tree when closed
-      if (menu) menu.inert = !isOpen;
-    };
-    const closeMenu = () => setMenu(false);
-    const onMenuClick = () =>
-      setMenu(btn?.getAttribute("aria-expanded") !== "true");
-    btn?.addEventListener("click", onMenuClick);
-    const menuLinks = menu ? Array.from(menu.querySelectorAll("a")) : [];
-    menuLinks.forEach((a) => a.addEventListener("click", closeMenu));
-
     /* Sticky header border on scroll + Back-to-top button */
     const header = document.querySelector(".site-header");
     const toTopFab = document.querySelector<HTMLAnchorElement>(".to-top-fab");
@@ -68,34 +52,6 @@ export default function SiteScripts() {
     );
     map.forEach((_, sec) => navIo.observe(sec));
 
-    /* Intro video — custom poster + play, native controls after click */
-    const introVid = document.getElementById(
-      "intro-video-el",
-    ) as HTMLVideoElement | null;
-    const introBtn = document.querySelector<HTMLButtonElement>(".intro-play");
-    const onPlayClick = () => {
-      if (!introVid) return;
-      introVid.controls = true;
-      introVid.play();
-      introBtn?.classList.add("is-playing");
-    };
-    const onPause = () => {
-      if (introVid && (introVid.currentTime === 0 || introVid.ended)) {
-        introBtn?.classList.remove("is-playing");
-        introVid.controls = false;
-      }
-    };
-    const onEnded = () => {
-      introBtn?.classList.remove("is-playing");
-      if (introVid) {
-        introVid.controls = false;
-        introVid.currentTime = 0;
-      }
-    };
-    introBtn?.addEventListener("click", onPlayClick);
-    introVid?.addEventListener("pause", onPause);
-    introVid?.addEventListener("ended", onEnded);
-
     /* Reveal on scroll */
     const revealEls = Array.from(document.querySelectorAll(".reveal"));
     const revealIo = new IntersectionObserver(
@@ -112,13 +68,8 @@ export default function SiteScripts() {
     revealEls.forEach((el) => revealIo.observe(el));
 
     return () => {
-      btn?.removeEventListener("click", onMenuClick);
-      menuLinks.forEach((a) => a.removeEventListener("click", closeMenu));
       window.removeEventListener("scroll", onScroll);
       toTopFab?.removeEventListener("click", onToTop);
-      introBtn?.removeEventListener("click", onPlayClick);
-      introVid?.removeEventListener("pause", onPause);
-      introVid?.removeEventListener("ended", onEnded);
       navIo.disconnect();
       revealIo.disconnect();
     };

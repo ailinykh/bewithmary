@@ -28,6 +28,11 @@
   --breakpoint-tab: 720px;
   --breakpoint-desk: 960px;
   --breakpoint-wide: 1280px;
+
+  /* Subtle display-text tightening from the brand spec */
+  --tracking-snug: -0.005em;
+  /* Wide tracking for mono uppercase eyebrows/labels */
+  --tracking-eyebrow: 0.14em;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -120,41 +125,6 @@
   }
   .mobile-menu.is-open {
     transform: translateY(0);
-  }
-
-  /* Intro video poster + play overlay (JS toggles .is-playing) */
-  .intro-play::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      transparent 55%,
-      oklch(20% 0.012 60 / 0.2) 100%
-    );
-    pointer-events: none;
-    transition: background 0.25s ease;
-  }
-  .intro-play:hover::before {
-    background: linear-gradient(
-      180deg,
-      transparent 50%,
-      oklch(20% 0.012 60 / 0.3) 100%
-    );
-  }
-  .intro-play-icon {
-    box-shadow: 0 14px 38px -10px oklch(20% 0.012 60 / 0.35);
-    transition:
-      transform 0.3s cubic-bezier(0.22, 0.6, 0.36, 1),
-      box-shadow 0.25s ease;
-  }
-  .intro-play:hover .intro-play-icon {
-    transform: scale(1.06);
-    box-shadow: 0 22px 52px -10px oklch(20% 0.012 60 / 0.45);
-  }
-  .intro-play.is-playing {
-    opacity: 0;
-    pointer-events: none;
   }
 
   /* Back-to-top FAB (JS toggles .is-visible) */
