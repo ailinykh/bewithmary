@@ -15,12 +15,17 @@ const inter = localFont({
   variable: '--font-inter',
   display: 'swap',
 });
+// Decorative pull-quote face only. `optional` + no preload keeps it off the
+// LCP critical path: the large first-viewport hero quote paints immediately
+// with Georgia instead of waiting on (or repainting for) a late web font.
 const cormorant = localFont({
   src: './fonts/cormorant-italic-cyrillic-latin.woff2',
   weight: '400 500',
   style: 'italic',
   variable: '--font-cormorant',
-  display: 'swap',
+  display: 'optional',
+  preload: false,
+  fallback: ['Georgia', 'serif'],
 });
 
 const title = 'Мария Ильиных — психотерапевт. КПТ и ACT';

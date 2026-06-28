@@ -15,7 +15,7 @@ function ChannelIcon({ src }: { src: string }) {
       aria-hidden="true"
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- decorative fixed-size SVG/PNG icons */}
-      <img src={src} alt="" />
+      <img src={src} alt="" width={28} height={28} />
     </span>
   );
 }

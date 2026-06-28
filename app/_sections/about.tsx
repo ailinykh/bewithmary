@@ -14,9 +14,12 @@ export function AboutSection() {
             [ видеовизитка · 1:35 ]<sup className="text-[.7em]">*</sup>
           </span>
           <div className="relative aspect-video w-full overflow-hidden bg-accent">
+            {/* Below the fold; lazy so VK's ~1.3 MB player stays off the
+                initial load and out of the LCP bandwidth window. */}
             <iframe
               src="https://vk.com/video_ext.php?oid=5829602&id=456239757"
               title="Видеовизитка — Мария Ильиных"
+              loading="lazy"
               className="absolute inset-0 h-full w-full border-0"
               allow="encrypted-media; picture-in-picture; screen-wake-lock;"
               allowFullScreen
