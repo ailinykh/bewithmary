@@ -1,22 +1,23 @@
 import type { Metadata } from 'next';
-import { Manrope, Inter, Cormorant_Garamond } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
-const manrope = Manrope({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['500', '600', '700'],
+// Self-hosted, subset to latin+cyrillic (see app/fonts/). Variable weight axes.
+const manrope = localFont({
+  src: './fonts/manrope-cyrillic-latin.woff2',
+  weight: '500 700',
   variable: '--font-manrope',
   display: 'swap',
 });
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500'],
+const inter = localFont({
+  src: './fonts/inter-cyrillic-latin.woff2',
+  weight: '400 500',
   variable: '--font-inter',
   display: 'swap',
 });
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500'],
+const cormorant = localFont({
+  src: './fonts/cormorant-italic-cyrillic-latin.woff2',
+  weight: '400 500',
   style: 'italic',
   variable: '--font-cormorant',
   display: 'swap',
