@@ -3,9 +3,9 @@ import { accentBtn, Arrow, Check, section, sectionTitle, wrap } from '../_ui';
 import { pricing, type PriceCard as PriceCardData } from '../_content/home';
 
 const cardHeading =
-  'font-display text-[clamp(20px,1.4vw+0.3rem,24px)] leading-[1.2] font-semibold tracking-[-0.012em] text-fg';
+  'font-display text-[clamp(20px,1.4vw+0.3rem,24px)] leading-[1.2] font-semibold tracking-display text-fg';
 const amount =
-  'mt-1 font-display text-[clamp(22px,1.8vw+0.3rem,30px)] leading-[1.2] font-semibold tracking-[-0.012em] text-fg';
+  'mt-1 font-display text-[clamp(22px,1.8vw+0.3rem,30px)] leading-[1.2] font-semibold tracking-display text-fg';
 
 function PriceCard({ card }: { card: PriceCardData }) {
   return (
@@ -45,7 +45,7 @@ function PriceCard({ card }: { card: PriceCardData }) {
       </div>
       <a
         href="#book"
-        className={`group mt-auto inline-flex items-center gap-3 self-start border border-accent bg-accent px-5 py-2.75 font-display text-sm font-medium tracking-snug text-surface ${accentBtn}`}
+        className={`group mt-auto inline-flex items-center gap-3 self-start border border-accent bg-accent px-5 py-3 font-display text-sm font-medium tracking-snug text-surface ${accentBtn}`}
       >
         {card.cta}
         <Arrow cls="h-3.5 w-3.5" />

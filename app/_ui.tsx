@@ -4,14 +4,14 @@ export const wrap = 'mx-auto w-full max-w-[1280px] px-[clamp(20px,4vw,48px)]';
 export const section =
   'relative border-t border-border py-[clamp(80px,12vw,144px)]';
 export const h2 =
-  'font-display font-semibold text-fg text-[clamp(32px,4.5vw,64px)] leading-[1.04] tracking-[-0.022em]';
+  'font-display font-semibold text-fg text-[clamp(32px,4.5vw,64px)] leading-[1.04] tracking-heading';
 export const sectionTitle = `${h2} mb-[clamp(40px,5vw,64px)] max-w-[22ch]`;
 export const accentBtn =
   'transition-[background,border-color,transform] duration-200 hover:bg-accent-hover hover:border-accent-hover hover:-translate-y-px active:translate-y-0';
 
 // Summary row for a leaf <details> accordion (Education groups, FAQ items).
 export const accordionSummary =
-  'grid w-full cursor-pointer list-none grid-cols-[1fr_24px] items-center gap-6 py-6 text-left font-display text-[clamp(17px,1.1vw+0.4rem,20px)] font-medium tracking-[-0.01em] text-fg transition-colors duration-150 outline-none hover:text-accent focus-visible:text-accent [&::-webkit-details-marker]:hidden';
+  'grid w-full cursor-pointer list-none grid-cols-[1fr_24px] items-center gap-6 py-6 text-left font-display text-[clamp(17px,1.1vw+0.4rem,20px)] font-medium tracking-display text-fg transition-colors duration-150 outline-none hover:text-accent focus-visible:text-accent [&::-webkit-details-marker]:hidden';
 
 export const Arrow = ({ cls = 'h-4 w-4' }: { cls?: string }) => (
   <svg

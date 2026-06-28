@@ -11,7 +11,7 @@ export function Header() {
       <div className={`${wrap} flex h-16 items-center justify-between`}>
         <a
           href="#top"
-          className="font-display text-base font-semibold tracking-[-0.01em]"
+          className="font-display text-base font-semibold tracking-display"
         >
           Мария Ильиных
         </a>
@@ -21,7 +21,7 @@ export function Header() {
               <li key={href}>
                 <a
                   href={href}
-                  className="nav-link border-b border-transparent py-1.5 text-[13px] whitespace-nowrap text-muted transition-[color,border-color] duration-150 hover:text-fg wide:text-sm"
+                  className="nav-link border-b border-transparent py-1.5 text-xs whitespace-nowrap text-muted transition-[color,border-color] duration-150 hover:text-fg wide:text-sm"
                 >
                   {label}
                 </a>
@@ -31,7 +31,7 @@ export function Header() {
         </nav>
         <a
           href="#book"
-          className={`hidden items-center gap-1.5 border border-accent bg-accent px-3.5 py-1.75 font-display text-[13px] font-medium tracking-snug whitespace-nowrap text-surface desk:inline-flex wide:px-4 wide:py-2 wide:text-sm ${accentBtn}`}
+          className={`hidden items-center gap-1.5 border border-accent bg-accent px-3.5 py-2 font-display text-xs font-medium tracking-snug whitespace-nowrap text-surface desk:inline-flex wide:px-4 wide:py-2 wide:text-sm ${accentBtn}`}
         >
           Записаться
         </a>

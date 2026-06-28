@@ -12,7 +12,7 @@ export function ProcessSection() {
               key={number}
               className="grid grid-cols-[48px_1fr] items-start gap-5 border-t border-border py-7 last:border-b last:border-border tab:grid-cols-[80px_1fr] tab:gap-10"
             >
-              <span className="pt-1 font-display text-sm font-medium tracking-[0.04em] text-muted">
+              <span className="pt-1 font-display text-sm font-medium text-muted">
                 {number}
               </span>
               <div>

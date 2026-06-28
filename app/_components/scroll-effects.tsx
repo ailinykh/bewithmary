@@ -2,11 +2,9 @@
 
 import { useEffect } from 'react';
 
-// Wires up scroll-driven chrome against the server-rendered DOM by class/id.
-// These selectors must stay in sync with the markup: .site-header,
-// .nav a[href^="#"], .nav-link, .to-top-fab, .reveal. (The mobile menu is a
-// self-contained client island — see app/_components/mobile-nav.tsx.)
-export default function SiteScripts() {
+// Viewport-driven chrome. Selector contract (must match the markup):
+// .site-header, .nav a[href^="#"], .nav-link, .to-top-fab, .reveal.
+export default function ScrollEffects() {
   useEffect(() => {
     /* Sticky header border on scroll + Back-to-top button */
     const header = document.querySelector('.site-header');

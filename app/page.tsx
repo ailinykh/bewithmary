@@ -1,4 +1,4 @@
-import SiteScripts from './site-scripts';
+import ScrollEffects from './_components/scroll-effects';
 import {
   AboutSection,
   ApproachSection,
@@ -29,7 +29,7 @@ export default function Home() {
       <BookSection />
       <Footer />
       <BackToTop />
-      <SiteScripts />
+      <ScrollEffects />
     </>
   );
 }

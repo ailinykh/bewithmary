@@ -2,7 +2,7 @@ import { wrap } from '../_ui';
 
 export function Footer() {
   return (
-    <footer className="border-t border-border pt-10 pb-15 text-[13px] text-muted">
+    <footer className="border-t border-border pt-10 pb-15 text-xs text-muted">
       <div
         className={`${wrap} flex flex-wrap items-end justify-between gap-x-8 gap-y-4`}
       >

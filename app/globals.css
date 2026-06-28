@@ -29,8 +29,10 @@
   --breakpoint-desk: 960px;
   --breakpoint-wide: 1280px;
 
-  /* Subtle display-text tightening from the brand spec */
+  /* Display-text tightening from the brand spec */
   --tracking-snug: -0.005em;
+  --tracking-display: -0.01em;
+  --tracking-heading: -0.022em;
   /* Wide tracking for mono uppercase eyebrows/labels */
   --tracking-eyebrow: 0.14em;
 }
@@ -63,8 +65,9 @@
 
 /* ─────────────────────────────────────────────────────────────
    Interactive chrome — JS-toggled state + pseudo-element animations
-   that don't reduce to utilities. Driven by app/site-scripts.tsx, which
-   queries these class names.
+   that don't reduce to utilities. The .menu-btn / .mobile-menu rules are
+   driven by app/_components/mobile-nav.tsx; the rest by
+   app/_components/scroll-effects.tsx, which queries these class names.
    ────────────────────────────────────────────────────────── */
 @layer components {
   /* Sticky header border appears once scrolled (JS toggles .is-scrolled) */

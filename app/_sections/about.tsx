@@ -2,7 +2,7 @@ import { accordionSummary, h2, section, Toggle, wrap } from '../_ui';
 import { education } from '../_content/home';
 
 const detailsSummary =
-  'group/sum grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-6 border-y border-border py-4.5 transition-[border-color] duration-150 outline-none group-open/sec:border-b-transparent hover:border-border-strong [&::-webkit-details-marker]:hidden';
+  'group/sum grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-6 border-y border-border py-4 transition-[border-color] duration-150 outline-none group-open/sec:border-b-transparent hover:border-border-strong [&::-webkit-details-marker]:hidden';
 const detailsTitle = `${h2} max-w-[22ch] transition-colors duration-150 group-hover/sum:text-accent group-focus-visible/sum:text-accent`;
 
 export function AboutSection() {
@@ -22,7 +22,7 @@ export function AboutSection() {
               allowFullScreen
             ></iframe>
           </div>
-          <p className="mt-4 text-[12px] leading-[1.6] text-muted">
+          <p className="mt-4 text-xs leading-[1.6] text-muted">
             <sup>*</sup> В видео упоминается Instagram — продукт компании
             Meta&nbsp;Platforms&nbsp;Inc., деятельность которой признана
             экстремистской и запрещена на территории Российской Федерации.
@@ -110,12 +110,12 @@ export function AboutSection() {
                     {title}
                     <Toggle />
                   </summary>
-                  <div className="max-w-[70ch] pb-7 text-[15px] leading-[1.65] text-muted">
+                  <div className="max-w-[70ch] pb-7 text-sm leading-[1.65] text-muted">
                     <ul className="grid list-none gap-3">
                       {items.map((it, i) => (
                         <li
                           key={i}
-                          className="relative pl-5.5 text-[15px] leading-[1.55] text-fg before:absolute before:top-3 before:left-0 before:h-px before:w-2.5 before:bg-muted before:content-['']"
+                          className="relative pl-6 text-sm leading-[1.55] text-fg before:absolute before:top-3 before:left-0 before:h-px before:w-2.5 before:bg-muted before:content-['']"
                         >
                           {it}
                         </li>

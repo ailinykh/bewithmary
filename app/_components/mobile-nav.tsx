@@ -1,28 +1,16 @@
 'use client';
 
-import { useState, useSyncExternalStore } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { accentBtn } from '../_ui';
 import { nav } from '../_content/home';
 
-// Returns false during SSR / first render, true once mounted on the client —
-// without a setState-in-effect. Lets us defer the body portal until there's a
-// document to portal into.
-const subscribe = () => () => {};
-const useMounted = () =>
-  useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false,
-  );
-
-// Hamburger button + slide-down sheet as one client island. The sheet is
-// portaled to <body> so it stays out of the sticky header's stacking context
-// (z-50) and keeps sliding out from behind the header. Styling still comes from
-// the .menu-btn / .mobile-menu rules in globals.css.
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const mounted = useMounted();
+  // Mount gate so the body portal only runs on the client.
+  const [mounted, setMounted] = useState(false);
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- one-shot mount flag
+  useEffect(() => setMounted(true), []);
   const close = () => setOpen(false);
 
   const sheet = (
@@ -38,7 +26,7 @@ export function MobileNav() {
             <a
               href={href}
               onClick={close}
-              className="block border-b border-border py-3.5 font-display text-xl font-medium tracking-[-0.01em]"
+              className="block border-b border-border py-3.5 font-display text-xl font-medium tracking-display"
             >
               {label}
             </a>
@@ -48,7 +36,7 @@ export function MobileNav() {
       <a
         href="#book"
         onClick={close}
-        className={`mt-6 inline-flex items-center gap-3.5 border border-accent bg-accent px-6 py-3.5 font-display text-[15px] font-medium tracking-snug text-surface ${accentBtn}`}
+        className={`mt-6 inline-flex items-center gap-3.5 border border-accent bg-accent px-6 py-3.5 font-display text-sm font-medium tracking-snug text-surface ${accentBtn}`}
       >
         Записаться на консультацию
       </a>
@@ -67,6 +55,7 @@ export function MobileNav() {
       >
         <span></span>
       </button>
+      {/* portaled to <body> to escape the header's backdrop-filter containing block */}
       {mounted && createPortal(sheet, document.body)}
     </>
   );

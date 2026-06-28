@@ -14,7 +14,7 @@ export function FaqSection() {
                   {question}
                   <Toggle />
                 </summary>
-                <div className="max-w-[70ch] pb-7 text-[15px] leading-[1.65] text-muted">
+                <div className="max-w-[70ch] pb-7 text-sm leading-[1.65] text-muted">
                   {answer}
                 </div>
               </details>
