@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     description,
     images: [ogImage],
   },
+  other: {
+    'yandex-verification': '0167c606c600341f',
+  },
   twitter: {
     card: 'summary_large_image',
     title,
