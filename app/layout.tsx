@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import YandexMetrika from './_components/yandex-metrika';
 
 // Self-hosted, subset to latin+cyrillic (see app/fonts/). Variable weight axes.
 const manrope = localFont({
@@ -74,7 +75,10 @@ export default function RootLayout({
       lang="ru"
       className={`${manrope.variable} ${inter.variable} ${cormorant.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <YandexMetrika />
+      </body>
     </html>
   );
 }
