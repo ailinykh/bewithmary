@@ -6,11 +6,9 @@ export function Footer() {
       <div
         className={`${wrap} flex flex-wrap items-end justify-between gap-x-8 gap-y-4`}
       >
-        <div>
-          <div className="font-display font-semibold text-fg">
-            Мария Ильиных
-          </div>
-          <div className="mt-1">© 2025</div>
+        <div className="mt-1">
+          ИП Ильиных Мария Владимировна · ОГРНИП 320774600431123 · ИНН
+          575306963172
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-3">
           <a

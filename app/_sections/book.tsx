@@ -104,10 +104,6 @@ export function BookSection() {
             деятельность которой признана экстремистской и запрещена на
             территории Российской Федерации.
           </p>
-          <p className="text-2.75 mt-3.5 max-w-[60ch] leading-[1.65] text-muted [font-variant-numeric:tabular-nums]">
-            ИП Ильиных Мария Владимировна · ОГРНИП 320774600431123 · ИНН
-            575306963172
-          </p>
         </div>
       </div>
     </section>
