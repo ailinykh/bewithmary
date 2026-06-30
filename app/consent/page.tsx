@@ -394,9 +394,7 @@ export default function ConsentPage() {
               Если у вас возникли вопросы, свяжитесь со мной в удобном
               мессенджере
             </p>
-            <a href="tel:+79202876181" className={styles.phone}>
-              +7 920 287 61 81
-            </a>
+            <div className={styles.phone}>+7 920 287 61 81</div>
           </div>
         </div>
       </main>

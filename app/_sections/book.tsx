@@ -66,12 +66,9 @@ export function BookSection() {
           <p className="max-w-[62ch] text-[clamp(17px,1.2vw+0.4rem,21px)] leading-normal text-muted">
             Чтобы записаться на консультацию или задать вопрос, напишите мне
           </p>
-          <a
-            href="tel:+79202876181"
-            className="mt-6 inline-block border-b border-[color-mix(in_oklab,var(--color-fg)_40%,transparent)] pb-1 font-display text-[clamp(18px,1vw+0.4rem,22px)] font-medium tracking-snug text-fg transition-[color,border-color] duration-200 hover:border-accent hover:text-accent"
-          >
+          <p className="mt-6 inline-block border-b border-[color-mix(in_oklab,var(--color-fg)_40%,transparent)] pb-1 font-display text-[clamp(18px,1vw+0.4rem,22px)] font-medium tracking-snug text-fg transition-[color,border-color] duration-200 hover:border-accent hover:text-accent">
             +7 920 287 61 81
-          </a>
+          </p>
         </div>
 
         <div className="reveal">
