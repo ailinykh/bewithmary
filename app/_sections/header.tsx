@@ -1,4 +1,4 @@
-import { accentBtn, wrap } from '../_ui';
+import { accentBtn, headerChrome, wrap } from '../_ui';
 import { nav } from '../_content/home';
 import { MobileNav } from '../_components/mobile-nav';
 
@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header
       id="top"
-      className="site-header backdrop-blur-3.5 sticky top-0 z-50 border-b border-transparent bg-[color-mix(in_oklab,var(--color-bg)_88%,transparent)] backdrop-saturate-[1.4] transition-[border-color] duration-200"
+      className={`site-header ${headerChrome} border-b border-transparent transition-[border-color] duration-200`}
     >
       <div className={`${wrap} flex h-16 items-center justify-between`}>
         <a

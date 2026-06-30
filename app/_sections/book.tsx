@@ -97,7 +97,7 @@ export function BookSection() {
         <div className="reveal desk:col-[2/-1]">
           <p className="mt-8 max-w-[60ch] text-xs leading-[1.65] text-muted [&_a]:border-b [&_a]:border-[color-mix(in_oklab,var(--color-fg)_30%,transparent)] [&_a]:text-fg [&_a]:transition-[border-color] [&_a]:duration-150 [&_a:hover]:border-fg">
             Записываясь на консультацию, вы подтверждаете ознакомление с{' '}
-            <a href="#consent-doc">информированным согласием</a>.
+            <a href="/consent">информированным согласием</a>.
           </p>
           <p className="mt-3.5 max-w-[60ch] text-xs leading-[1.65] text-muted">
             <sup>*</sup> Instagram принадлежит компании Meta Platforms Inc.,

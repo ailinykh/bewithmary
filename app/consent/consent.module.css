@@ -1,0 +1,225 @@
+/* Consent document typography. Justified legal prose, counter-numbered lists,
+   custom list markers, callout, and the price rows don't reduce cleanly to
+   utilities, so they live here, scoped to the route. Colors/fonts reference the
+   global @theme tokens from globals.css. */
+
+.subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 1.2vw + 0.4rem, 22px);
+  line-height: 1.4;
+  color: var(--color-fg);
+  max-width: 58ch;
+  margin-inline: auto;
+}
+
+.body p {
+  font-size: clamp(15px, 0.4vw + 0.5rem, 16.5px);
+  line-height: 1.7;
+  color: var(--color-fg);
+  margin-bottom: 18px;
+  text-align: justify;
+  text-wrap: pretty;
+}
+.body p:last-child {
+  margin-bottom: 0;
+}
+.body strong {
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+.intro {
+  margin-bottom: clamp(40px, 6vw, 64px);
+  padding-bottom: clamp(32px, 4vw, 48px);
+  border-bottom: 1px solid var(--color-border);
+}
+.intro p,
+.outro p {
+  font-size: clamp(16px, 0.5vw + 0.6rem, 18px);
+  line-height: 1.6;
+}
+
+.chapter {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.chapter:last-of-type {
+  margin-bottom: 0;
+}
+.chapter h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 1.6vw + 0.4rem, 30px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.18;
+  color: var(--color-fg);
+  margin-bottom: 22px;
+}
+
+.body ul {
+  list-style: none;
+  margin: 18px 0;
+  padding: 0;
+}
+.body ul li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: clamp(15px, 0.4vw + 0.5rem, 16.5px);
+  line-height: 1.65;
+  text-align: justify;
+}
+.body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 11px;
+  height: 6px;
+  border-left: 1.5px solid var(--color-fg);
+  border-bottom: 1.5px solid var(--color-fg);
+  transform: rotate(-45deg);
+}
+.body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.body ol {
+  list-style: none;
+  margin: 18px 0;
+  padding: 0;
+  counter-reset: legal-counter;
+}
+.body ol li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  font-size: clamp(15px, 0.4vw + 0.5rem, 16.5px);
+  line-height: 1.65;
+  text-align: justify;
+  counter-increment: legal-counter;
+}
+.body ol li::before {
+  content: counter(legal-counter) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-accent);
+  font-weight: 500;
+  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
+}
+.body ol li:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested ordered list — em-dash markers (counter still increments, unused). */
+.body ul ol {
+  margin: 10px 0 4px 0;
+  padding-left: 0;
+}
+.body ul ol li {
+  padding-left: 22px;
+  margin-bottom: 8px;
+  font-size: clamp(14.5px, 0.4vw + 0.5rem, 16px);
+}
+.body ul ol li::before {
+  content: '—';
+  width: auto;
+  height: auto;
+  border: none;
+  transform: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-muted);
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.callout {
+  display: block;
+  margin: 24px 0;
+  padding: 18px 22px;
+  border-left: 2px solid var(--color-accent);
+  background: var(--color-accent-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.prices {
+  display: grid;
+  gap: 0;
+  margin: 14px 0 4px;
+}
+.prices > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: baseline;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: clamp(14.5px, 0.4vw + 0.5rem, 16px);
+  line-height: 1.5;
+  text-align: left;
+}
+.prices > div:first-child {
+  border-top: 1px solid var(--color-border);
+}
+.prices dt,
+.prices dd {
+  margin: 0;
+}
+.amount {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.outro {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--color-border);
+}
+
+.contact {
+  margin-top: clamp(48px, 6vw, 72px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 16px;
+}
+.contact p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.2vw + 0.4rem, 22px);
+  line-height: 1.4;
+  color: var(--color-fg);
+  text-align: left;
+  max-width: 56ch;
+  margin-bottom: 0;
+}
+.phone {
+  display: inline-block;
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 1.6vw + 0.4rem, 28px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-fg);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-fg) 40%, transparent);
+  padding-bottom: 4px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  font-variant-numeric: tabular-nums;
+}
+.phone:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}

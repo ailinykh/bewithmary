@@ -14,7 +14,7 @@ export function Footer() {
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-3">
           <a
-            href="#consent-doc"
+            href="/consent"
             className="border-b border-transparent pb-px text-muted transition-[color,border-color] duration-150 hover:border-muted hover:text-fg"
           >
             Информированное согласие

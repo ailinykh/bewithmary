@@ -1,6 +1,10 @@
 // Shared class constants + presentational primitives reused across sections.
 
 export const wrap = 'mx-auto w-full max-w-[1280px] px-[clamp(20px,4vw,48px)]';
+// Sticky frosted-glass header chrome shared by the home and consent headers.
+// Each adds its own bottom border (transparent + JS-toggled vs static).
+export const headerChrome =
+  'sticky top-0 z-50 bg-[color-mix(in_oklab,var(--color-bg)_88%,transparent)] backdrop-blur-[14px] backdrop-saturate-[1.4]';
 export const section =
   'relative border-t border-border py-[clamp(80px,12vw,144px)]';
 export const h2 =
