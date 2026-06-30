@@ -3,12 +3,15 @@
 import { useEffect } from 'react';
 
 // Viewport-driven chrome. Selector contract (must match the markup):
-// .site-header, .nav a[href^="#"], .nav-link, .to-top-fab, .reveal.
+// .site-header, .nav a[href^="#"], .nav-link, a[href="#top"], .to-top-fab, .reveal.
 export default function ScrollEffects() {
   useEffect(() => {
     /* Sticky header border on scroll + Back-to-top button */
     const header = document.querySelector('.site-header');
     const toTopFab = document.querySelector<HTMLAnchorElement>('.to-top-fab');
+    const topLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>('a[href="#top"]'),
+    );
     const onScroll = () => {
       if (window.scrollY > 8) header?.classList.add('is-scrolled');
       else header?.classList.remove('is-scrolled');
@@ -25,7 +28,7 @@ export default function ScrollEffects() {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-    toTopFab?.addEventListener('click', onToTop);
+    topLinks.forEach((link) => link.addEventListener('click', onToTop));
 
     /* Active nav link via IntersectionObserver */
     const links = Array.from(
@@ -69,7 +72,7 @@ export default function ScrollEffects() {
 
     return () => {
       window.removeEventListener('scroll', onScroll);
-      toTopFab?.removeEventListener('click', onToTop);
+      topLinks.forEach((link) => link.removeEventListener('click', onToTop));
       navIo.disconnect();
       revealIo.disconnect();
     };

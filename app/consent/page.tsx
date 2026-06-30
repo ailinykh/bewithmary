@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ScrollEffects from '../_components/scroll-effects';
 import { headerChrome, wrap } from '../_ui';
 import { Footer } from '../_sections';
 import styles from './consent.module.css';
@@ -396,6 +397,7 @@ export default function ConsentPage() {
       </main>
 
       <Footer />
+      <ScrollEffects />
     </>
   );
 }
