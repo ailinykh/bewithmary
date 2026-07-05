@@ -13,18 +13,28 @@ export function AboutSection() {
           <span className="text-2.75 mb-5.5 inline-block font-mono tracking-eyebrow text-muted uppercase">
             [ видеовизитка · 1:35 ]<sup className="text-[.7em]">*</sup>
           </span>
-          <div className="relative aspect-video w-full overflow-hidden bg-accent">
-            {/* Below the fold; lazy so VK's ~1.3 MB player stays off the
-                initial load and out of the LCP bandwidth window. */}
-            <iframe
-              src="https://vk.com/video_ext.php?oid=5829602&id=456239757"
-              title="Видеовизитка — Мария Ильиных"
-              loading="lazy"
-              className="absolute inset-0 h-full w-full border-0"
-              allow="encrypted-media; picture-in-picture; screen-wake-lock;"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster="https://s3.bewithmary.com/mariia-ilinykh-intro-v1-poster.jpg"
+            className="aspect-video w-full bg-accent"
+            aria-label="Видеовизитка Марии Ильиных"
+          >
+            <source
+              src="https://s3.bewithmary.com/mariia-ilinykh-intro-v1-480.mp4"
+              type="video/mp4"
+              media="(max-width: 640px)"
+            />
+            <source
+              src="https://s3.bewithmary.com/mariia-ilinykh-intro-v1-720.webm"
+              type="video/webm"
+            />
+            <source
+              src="https://s3.bewithmary.com/mariia-ilinykh-intro-v1-720.mp4"
+              type="video/mp4"
+            />
+          </video>
           <p className="mt-4 text-xs leading-[1.6] text-muted">
             <sup>*</sup> В видео упоминается Instagram — продукт компании
             Meta&nbsp;Platforms&nbsp;Inc., деятельность которой признана
